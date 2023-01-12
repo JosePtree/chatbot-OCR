@@ -1,0 +1,68 @@
+Response from DialogFlow API:  [
+    {
+      responseId: 'd6558395-b6e2-443a-bad4-fa310853152e-1c1d45f1',
+      queryResult: {
+        fulfillmentMessages: [Array],
+        outputContexts: [],
+        queryText: 'Hola',
+        speechRecognitionConfidence: 0,
+        action: 'input.welcome',
+        parameters: [Object],
+        allRequiredParamsPresent: true,
+        fulfillmentText: '¡Que tal!, un gusto saludarte, ¿En que puedo servirte?',
+        webhookSource: '',
+        webhookPayload: null,
+        intent: [Object],
+        intentDetectionConfidence: 1,
+        diagnosticInfo: null,
+        languageCode: 'es',
+        sentimentAnalysisResult: null,
+        cancelsSlotFilling: false
+      },
+      webhookStatus: null,
+      outputAudio: <Buffer >,
+      outputAudioConfig: null
+    },
+    null,
+    null
+  ]
+
+
+Intent object:  {
+  inputContextNames: [],
+  events: [],
+  trainingPhrases: [],
+  outputContexts: [],
+  parameters: [],
+  messages: [],
+  defaultResponsePlatforms: [],
+  followupIntentInfo: [],
+  name: 'projects/prueba-352516/agent/intents/2d513a6d-ebf2-48a5-8806-2db79e232fbd',
+  displayName: 'Default Welcome Intent',
+  priority: 0,
+  isFallback: false,
+  webhookState: 'WEBHOOK_STATE_UNSPECIFIED',
+  action: '',
+  resetContexts: false,
+  rootFollowupIntentName: '',
+  parentFollowupIntentName: '',
+  mlDisabled: false,
+  liveAgentHandoff: false,
+  endInteraction: false
+}
+
+
+Fulfillment array:  [
+  {
+    platform: 'PLATFORM_UNSPECIFIED',
+    text: { text: [Array] },
+    message: 'text'
+  }
+]
+
+Parameters object:  {
+  fields: {
+    tipo_seguro: { stringValue: 'auto', kind: 'stringValue' },
+    tipo_solicitud: { stringValue: 'cotizar', kind: 'stringValue' }
+  }
+}

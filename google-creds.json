@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "prueba-352516",
+  "private_key_id": "660279a8932057b8908dd5f26f15440b8429121b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzCcOJ76MqAv9w\nAItxphYRQ8Uw5lp9wWD15oCLBMhdWnJCBCzdlYrnsa5TS1Xy9Twbnx9lns2sLAr0\n7rDlpO/XHnDbs/mZXB/7G9wRfBIi50VSG06Hj6AmjOb2dkFFmQZBSotZrHl75/lR\nqW2211u7KDABL49J9AOLQ3WH4dkpzh8cdVzXszqX95bO5oP6b1pR5DsI1Mf9NeDX\ncZPBGDcybfpYUVBPGhgwSYN5POAvHH13c6SVQdEeBMaFvU/+49qP0lmoS+3yrZPM\nUZeqkwIIjPgzVMztCs758qT16IpWQlpT8mqi7c2p9UOC0KZnC4y8JC62Rt6C61Tm\ndT7Mw8b1AgMBAAECggEACazjvKbkT2ySt0/K5Ae7YOV5A5fUmL/ZkzsIrqVB2rb8\n6Q+8CPbVkd3VSOUPrliNuK8UYvPTs5PnEljP2ykwWOoT4/D0R9MQW2FPDEGDOBBS\n0Qluvf6yA0NRZqJPYV56qw6ckepd36dSnuokEWHOsEI6DeZZvP+11/x7noNDBBzr\nTkvT9fgS1L0kYgCkwstb3Rj8ays9V8lrskz/mHwTN1ZK9Tbs1UtLT7Ebs8+SF1+v\na3yXEz2BMOTgsDh/M41TMJ9qXonQZCeBcGu3jXMDhJ2W9hyJpBHE0ZQ7Wlx9QeOe\nOwnQK50Q7LijXeWEBWjqEyi3JS6zJ/2pFAs51tZPxQKBgQDlzTuhII7Zw1x6EfBL\ncV6jILN91+KUioN8yl6GamY5rguVdgcdX8nWrxLtH2LV+bdpbWiKsoOhMI4o5Wvr\nwS9aQd462IEchVujmwnJlfvCggMtWerBulH41izOg+8Agrxf/gi8reAa3+KBi92a\n68GVx0MywrFWH1Dy1OxXsWjLJwKBgQDHcv7geT3oisiRrjbbvcx1JCqU8VzBoCGf\nXeh8O6lQXwBuH54p3A2XhZFq8HG+Vxg1eC1GLtaiuzjeXCqX97KdzKtCpJozhDeJ\nUOF0grVLvnPyDEPTA9RP1owpST41yGB0ZarNibJ2l/Df/tYvoM7hiBXAnXV2jsTU\n+Hqfl0jegwKBgQDddbm/gBbquaEHav4+VlUztDIGVuTe7dXlj0klFKjLcXVsZkBZ\nCJUFNddxeUvQlkUxbuTOtVaxIo/9zYsBuj0eKFg4ManLiKFVu/XktYvYWV8id4ML\ni7mvqwenRfIwdc2AXNqiqpZMj/JDkjzQLd9zroKOCp7INonWW2gg4rHxBQKBgG4O\nG2w8GpgttJ0Gd8jrQ13ENib3xEonlUX+KKIcvcHWmkMp+Tl57poUnvhWcz0ni/k9\nNiZLBC7JhojUbMBscsg2Pq5Ia7pPk+GWmsGSun1wO0Rt1iMjMs1XQwIpI0XEKs0v\nqH9AIxTjpIvFb+TaJC44zF/7wuxHvX8TGX7kmNYHAoGBAMZ5OflxPehtKoqkwOGJ\nEzntH+qz22BhQyLY/1DSHWFbqPcgALTYWZA68DI5PPJAgQgiHCgNgXeFyCeNUs+E\ntVMkGDhthZ8yedwEPsdiPCVZ3mii/8feWpYlnnUdfUI/VYrpqQU9p96jc2JMa395\ndISYvMEkxUMxz80dgjJUq02y\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-testing-integration@prueba-352516.iam.gserviceaccount.com",
+  "client_id": "105841616702132336797",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-testing-integration%40prueba-352516.iam.gserviceaccount.com"
+}
