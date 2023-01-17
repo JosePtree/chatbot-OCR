@@ -170,12 +170,73 @@ app.post('/whatsapp', async function (req, res) {
                                 `Nombre: ${infoObj.PATERNO} ${infoObj.MATERNO} ${infoObj.NOMBRE}\nDirección: ${infoObj.ADDRESS}\nFecha de nacimiento: ${infoObj.BIRTHDATE}\nClave de elector: ${infoObj.IDELECTOR}\nCurp: ${infoObj.CURP}\n`
                                 :
                                 `CIC: ${infoObj.CIC}\nOCR: ${infoObj.OCR}\n`
+                            console.log(auxString)
 
-                            await twilioClient.messages.create({
+                            let fullname = infoObj.PATERNO.replace(/(\r\n|\n|\r)/gm, "") + " "
+                                + infoObj.MATERNO.replace(/(\r\n|\n|\r)/gm, "") + " "
+                                + infoObj.NOMBRE.replace(/(\r\n|\n|\r)/gm, "");
+                            let curp = infoObj.CURP.replace(/(\r\n|\n|\r)/gm, "");
+                            let idElector = infoObj.IDELECTOR.replace(/(\r\n|\n|\r)/gm, "");
+                            let address = infoObj.ADDRESS.replace(/(\r\n|\n|\r)/gm, "");
+                            let birthdate = infoObj.BIRTHDATE.replace(/(\r\n|\n|\r)/gm, "");
+
+
+
+                            //Este es el request body para la API de freshdesk
+                            var requestBody = {
+                                group_id: 70000466713,
+                                description: "Cotización para seguro de vivienda",
+                                subject: "Solicitud de cotización de seguro",
+                                email: "jose@ptree.com.mx",
+                                priority: 1,
+                                source: 3,
+                                status: 2,
+                                type: "Atención a Clientes",
+                                cc_emails: [
+                                    "ram@freshdesk.com",
+                                    "diana@freshdesk.com"
+                                ],
+                                custom_fields: {
+                                    cf_correo: "test@ptree.com.mx",
+                                    cf_nombre_del_solicitante: fullname,
+                                    cf_telefono: null,
+                                    cf_curp: curp,
+                                    cf_clave_de_elector: idElector,
+                                    cf_domicilio: address,
+                                    cf_tipo_de_seguro: "Vivienda",
+                                    cf_fecha_de_nacimiento: null
+                                }
+                            }
+
+                            var config = {
+                                headers: {
+                                    "content-Type": "application/json",
+                                    "Authorization": "Basic " + auth
+                                }
+                            }
+
+                            let ticketID = null;
+
+                            const res = await axios.post('https://ptree.freshdesk.com/api/v2/tickets', requestBody, config)
+                                .then(async function (response) {
+                                    console.log("Ticket levantado")
+                                    //console.log(response.data)
+                                    ticketID = response.data.id;
+                                    await twilioClient.messages.create({
+                                        from: to,
+                                        to: from,
+                                        body: `Se ha levantado exitosamente tu solicitud con el ID ${ticketID}.`
+                                    });
+                                })
+                                .catch(function (error) {
+                                    console.log(error);
+                                });
+
+                            /* await twilioClient.messages.create({
                                 from: to,
                                 to: from,
                                 body: `Tu imagen contiene el siguiente texto\n\n${auxString}.`
-                            });
+                            }); */
                         });
 
                 } else {
@@ -256,30 +317,6 @@ app.post('/whatsapp', async function (req, res) {
                 to: from,
                 body: `Tu solicitud será creada en breves instantes, por favor espera la confirmación.`
             });
-
-            var requestBody = {
-                description: "Devolución",
-                subject: "Solicitud de cotización de seguro",
-                email: "jose@ptree.com.mx",
-                priority: 1,
-                source: 3,
-                status: 2,
-                type: "Atención a Clientes",
-                cc_emails: [
-                    "ram@freshdesk.com",
-                    "diana@freshdesk.com"
-                ],
-                custom_fields: {
-                    cf_correo: "test@ptree.com.mx",
-                    cf_nombre_del_solicitante: "José Hernández",
-                    cf_telefono: null,
-                    cf_curp: "HECJ950207HDFRSS03",
-                    cf_clave_de_elector: "HRCSJS95020709H700",
-                    cf_domicilio: "C MIGUEL HIDALGO MZ 40 LT 17 CS 3\nFRACC LOS HEROES 56585\nIXTAPALUCA, MEX.",
-                    cf_tipo_de_seguro: "Vivienda",
-                    cf_fecha_de_nacimiento: "07/02/1995"
-                }
-            }
 
             var requestBody = {
                 description: response[0].queryResult.parameters.fields.Descripcion.stringValue,
